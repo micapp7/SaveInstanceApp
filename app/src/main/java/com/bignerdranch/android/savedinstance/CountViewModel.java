@@ -1,18 +1,20 @@
 package com.bignerdranch.android.savedinstance;
 
 import android.app.Application;
+import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
 import android.databinding.Bindable;
 import android.support.annotation.NonNull;
 
-public class CountViewModel extends ObservableViewModel {
+public class CountViewModel extends AndroidViewModel {
+    // bound to a layout xml.
     private MutableLiveData<String> counter;
+
 
     public CountViewModel(@NonNull Application application) {
         super(application);
     }
-
 
     public MutableLiveData<String> getCounter() {
         if(counter == null) {

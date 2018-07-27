@@ -37,13 +37,7 @@ public class MainActivity extends AppCompatActivity {
         currentCount = prefs.getInt(COUNTER, 0);
         countViewModel.getCounter().setValue(String.valueOf(currentCount));
 
-        // Set a method that is able to be observed
-        final Observer<String> countObserver = newCount -> binding.textView.setText(newCount);
-
-        // Observe the currentCount using this activity as the life cycle owner
-        countViewModel.getCounter().observe(this, countObserver);
-
-        // Change count
+        // Observed in activity_main
         binding.incrementButton.setOnClickListener(v -> countViewModel
                 .getCounter().setValue(String.valueOf(++currentCount)));
     }
