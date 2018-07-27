@@ -7,14 +7,14 @@ import android.databinding.Bindable;
 import android.support.annotation.NonNull;
 
 public class CountViewModel extends ObservableViewModel {
-    private MutableLiveData<Integer> counter;
+    private MutableLiveData<String> counter;
 
     public CountViewModel(@NonNull Application application) {
         super(application);
     }
 
 
-    public MutableLiveData<Integer> getCounter() {
+    public MutableLiveData<String> getCounter() {
         if(counter == null) {
             counter = new MutableLiveData<>();
         }
